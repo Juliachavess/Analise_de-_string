@@ -1,0 +1,9 @@
+import pandas as pd
+
+def some_function(df,column1, column2):
+  return df.groupby(column1)[column2].mean()
+
+data = pd.DataFrame({'Escolaridade':['Ensino Médio', 'Ensino Fundamental', 'Ensino Médio','Ensino Superior','Ensino Superior','Ensino superior'], 
+                       'Idade': [35,40,20,33,35,21]})
+data['Escolaridade'] = data['Escolaridade'].str.capitalize()                      
+print(some_function(data, 'Escolaridade', 'Idade'))
